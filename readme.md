@@ -2,5 +2,5 @@
 
 # Spice Weasel
 
->  I knocked it up a notch with your `spiceweasel`. Bam!
+>  I knocked it up a notch with my `spiceweasel`. Bam!
 
