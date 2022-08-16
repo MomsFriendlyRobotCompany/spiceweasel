@@ -1,5 +1,10 @@
 ![](https://github.com/MomsFriendlyRobotCompany/spiceweasel/raw/main/pics/elzar.png)
 
+![GitHub](https://img.shields.io/github/license/MomsFriendlyRobotCompany/spiceweasel)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/spiceweasel)
+![PyPI](https://img.shields.io/pypi/v/spiceweasel)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/spiceweasel?color=aqua)
+
 # Spice Weasel
 
 >  I knocked it up a notch with my `spiceweasel`. Bam!
