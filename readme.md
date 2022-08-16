@@ -1,8 +1,10 @@
-![](pics/elzar.png)
+![](https://github.com/MomsFriendlyRobotCompany/spiceweasel/raw/main/pics/elzar.png)
 
 # Spice Weasel
 
 >  I knocked it up a notch with my `spiceweasel`. Bam!
+
+**under development**
 
 # MIT License
 
