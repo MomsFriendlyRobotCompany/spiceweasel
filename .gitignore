@@ -6,3 +6,5 @@ dist
 archive
 old
 __pycache__
+.pytest_cache
+

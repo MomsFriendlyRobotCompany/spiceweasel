@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+##############################################
+# The MIT License (MIT)
+# Copyright (c) 2022 Kevin Walchko
+# see LICENSE for full details
+##############################################
 import numpy as np
 from pyrk import RK4
 from .jacobian import JacobianCenter
@@ -6,28 +12,39 @@ from .jacobian import JacobianCenter
 class EKF:
     """
     This is a continuous-discrete extended kalman filter
+
+    func(dt, x, u)
+
+    x: state (n,1)
+    z: measurement (m,1)
+    P: covariance (n,n)
+    R: measurement noise covariance (m,m)
+    Q: process noise covariance (n,n)
+
     """
-    def __init__(self, func, dt):
+    def __init__(self, func, dt, n, m):
         """
-        func(t, x, u)
-        x: state (n,1)
-        z: measurement (m,1)
-        R: measurement noise covariance (m,m)
-        Q: process noise covariance (n,n)
+        func(dt, x, u)
+        dt: time step
+        n: state size
+        m: measurement size
         """
         self.func = func
         self.rk = RK4(func, dt)
         self.J = JacobianCenter(self.func)
         self.dt = dt
+        self.m = m
+        self.n = n
+        self.reset()
 
-    def reset(self, n, m):
+    def reset(self):
         """
         Resets the KF to correct dimensions as either an
         eye or zeros matrix.
-
-        n: state size (Q)
-        m: measurement size (R)
         """
+        m = self.m
+        n = self.n
+
         self.R = np.eye(m)
         self.Q = np.eye(n)
         self.P = np.eye(n)

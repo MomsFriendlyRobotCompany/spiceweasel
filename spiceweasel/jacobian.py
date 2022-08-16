@@ -1,5 +1,11 @@
+# -*- coding: utf-8 -*-
+##############################################
+# The MIT License (MIT)
+# Copyright (c) 2022 Kevin Walchko
+# see LICENSE for full details
+##############################################
 import numpy as np
-from pyrk import RK4
+# from pyrk import RK4
 
 class Jacobian:
     def __init__(self, f):
