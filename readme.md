@@ -28,7 +28,7 @@ def func(dt, x, u):
     u: control forces or other inputs
     """
 
-    # differential equations
+    # some differential equations
     return x
 
 # create a kalman filter
@@ -37,9 +37,9 @@ ekf = EKF(func, dt, 2, 2)
 # so reset puts R and Q to identify matrix, you should
 # adjust them to your system
 ekf.reset()
-ekf.R *= [0.01,0.01,0.1] # measurement cov
-ekf.Q *= [.05,.05,.1]    # process cov
-ekf.x = np.array([1,-2]) # default sets this to zeros
+ekf.R *= [0.01,0.01] # measurement cov
+ekf.Q *= [.05,.05]    # process cov
+ekf.x = np.array([1,-2]) # initialize state, default sets this to zeros
 
 # main filtering loop
 for i in range(num):

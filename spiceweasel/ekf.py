@@ -12,6 +12,7 @@ from .jacobian import JacobianCenter
 class EKF:
     """
     This is a continuous-discrete extended kalman filter
+    Gleb, Table 6.1-1, p 188
 
     func(dt, x, u)
 
@@ -50,7 +51,7 @@ class EKF:
         self.P = np.eye(n)
 
         self.x = np.zeros(n)
-        self.H = np.eye(m)
+        self.H = np.eye(m) # should this be n, even though m < n?
         self.I = np.eye(n)
 
     def predict(self, u):
@@ -62,6 +63,7 @@ class EKF:
         self.x = self.rk(self.dt, self.x, u)
         F = self.J(self.dt, self.x, u)
         self.P = F @ self.P @ F.T + self.Q
+        # self.P = F @ self.P + self.P @ F.T + self.Q
 
     def update(self, z):
         """
@@ -71,10 +73,13 @@ class EKF:
         H = self.H
         I = self.I
 
-        y = z - H.dot(self.x)
         S = H @ self.P @ H.T + self.R
+        # change to: solve K*S = (P*H.T) -> Ax=B, faster, more stable?
         K = self.P @ H.T @ np.linalg.inv(S)
+
+        y = z - H.dot(self.x)
         self.x = self.x + K.dot(y)
+
         self.P = (I - K.dot(H)).dot(self.P)
 
         return self.x
