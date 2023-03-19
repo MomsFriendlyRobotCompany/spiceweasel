@@ -54,13 +54,16 @@ class EKF:
         self.H = np.eye(m) # should this be n, even though m < n?
         self.I = np.eye(n)
 
-    def predict(self, u):
+    def predict(self, u, dt=None):
         """
         Predicts the future state (x) and covarience
         matrix (P). The state predicution uses RK4 to
         integrate.
         """
-        self.x = self.rk(self.dt, self.x, u)
+        if dt is None:
+            dt = self.dt
+
+        self.x = self.rk(dt, self.x, u)
         F = self.J(self.dt, self.x, u)
         self.P = F @ self.P @ F.T + self.Q
         # self.P = F @ self.P + self.P @ F.T + self.Q

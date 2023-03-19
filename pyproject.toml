@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "spiceweasel"
-version = "0.0.3"
+version = "0.0.4"
 description = "Kalman filter stuff"
 authors = ["walchko <walchko@users.noreply.github.com>"]
 readme = "readme.md"
