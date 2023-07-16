@@ -8,8 +8,6 @@
 
 **under development**
 
-Kalman filter written in different languages.
-
 # MIT License
 
 **Copyright (c) 2022 Mom's Friendly Robot Company**

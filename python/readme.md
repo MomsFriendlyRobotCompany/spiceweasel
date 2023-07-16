@@ -1,6 +1,9 @@
 ![](https://github.com/MomsFriendlyRobotCompany/spiceweasel/raw/main/pics/elzar.png)
 
 ![GitHub](https://img.shields.io/github/license/MomsFriendlyRobotCompany/spiceweasel)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/spiceweasel)
+![PyPI](https://img.shields.io/pypi/v/spiceweasel)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/spiceweasel?color=aqua)
 
 # Spice Weasel
 
@@ -8,7 +11,45 @@
 
 **under development**
 
-Kalman filter written in different languages.
+The list of imported packages can be found in the [pyproject.toml][toml].
+
+## Usage
+
+Basic example:
+
+```python
+import numpy as np
+from spiceweasel import EKF
+
+def func(dt, x, u):
+    """
+    dt: time step
+    x: state estimate
+    u: control forces or other inputs
+    """
+
+    # some differential equations
+    return x
+
+# create a kalman filter
+ekf = EKF(func, dt, 2, 2)
+
+# so reset puts R and Q to identify matrix, you should
+# adjust them to your system
+ekf.reset()
+ekf.R *= [0.01,0.01] # measurement cov
+ekf.Q *= [.05,.05]    # process cov
+ekf.x = np.array([1,-2]) # initialize state, default sets this to zeros
+
+# main filtering loop
+for i in range(num):
+    # ...
+    ekf.predict(u)
+    # ...
+    y = ekf.update(meas)
+
+# ...
+```
 
 # MIT License
 

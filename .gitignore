@@ -1,10 +1,16 @@
+# misc
 .DS_Store
-*.pyc
 ._*
-*.lock
-dist
 archive
 old
+
+# python
+*.pyc
+*.lock
+dist
 __pycache__
 .pytest_cache
+
+# C++
+build
 
