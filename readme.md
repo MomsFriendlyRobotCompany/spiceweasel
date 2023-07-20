@@ -10,6 +10,9 @@
 
 Kalman filter written in different languages.
 
+- [Kalman Filter](https://en.wikipedia.org/wiki/Kalman_filter)
+- [Extended Kalman Filter](https://en.wikipedia.org/wiki/Extended_Kalman_filter)
+
 # MIT License
 
 **Copyright (c) 2022 Mom's Friendly Robot Company**

@@ -29,14 +29,23 @@ else()
     set(BUILD_GTESTS OFF)
 endif()
 
-add_library(${PROJECT_NAME} INTERFACE)
-target_include_directories(${PROJECT_NAME} INTERFACE src/)
+# Eigen ========================================================================
+find_package(Eigen3 REQUIRED)
+message(STATUS ">> ${EIGEN3_INCLUDE_DIR}")
 
-# # Examples -----------------------------------------------------------
-# message(STATUS "Building ${PROJECT_NAME} examples is ${BUILD_EXAMPLES}")
-# if(BUILD_EXAMPLES)
-#     add_subdirectory(examples)
-# endif()
+# Library -----------------------------------------------------------
+add_library(${PROJECT_NAME} INTERFACE)
+target_include_directories(${PROJECT_NAME}
+    INTERFACE
+        $<BUILD_INTERFACE:${EIGEN3_INCLUDE_DIR}>
+        src
+)
+
+# Examples -----------------------------------------------------------
+message(STATUS "Building ${PROJECT_NAME} examples is ${BUILD_EXAMPLES}")
+if(BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
 
 # Tests --------------------------------------------------------------
 message(STATUS "Building ${PROJECT_NAME} gtests is ${BUILD_GTESTS}")

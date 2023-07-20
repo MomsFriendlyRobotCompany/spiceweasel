@@ -4,6 +4,4 @@
 
 using namespace std;
 
-TEST(navigation, wgs84) {
-  EXPECT_TRUE(true);
-}
+TEST(navigation, wgs84) { EXPECT_TRUE(true); }

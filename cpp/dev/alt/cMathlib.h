@@ -1,41 +1,4 @@
 
-/*!
-\mainpage
-\author Kevin J. Walchko
-
- \warning This is still a work in progress, so not all member functions
- are documented. Also not all member functions are completely tested,
- so make sure that any mathamatical code is double checked.
-
- <hr>
-
- cMathlib is a collection of mathamatical classes for vectors, matrices,
- and quaternions. There are additionally class provided for random number
- generation and numerical integration.
-
- <hr>
-
- <center> <h2> License (LGPL) </h2> </center>
-
- <center> Copyright (C) 2000  Kevin J. Walchko <walchko@mac.com> </center>
-
- <kbd>
- This library is free software; you can redistribute it and/or
- modify it under the terms of the GNU Lesser General Public
- License as published by the Free Software Foundation; either
- version 2.1 of the License, or (at your option) any later version.
-
- This library is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- Lesser General Public License for more details.
-
- You should have received a copy of the GNU Lesser General Public
- License along with this library; if not, write to the Free Software
- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- </kbd>
-*/
-
 #ifndef CMATHLIB_H
 #define CMATHLIB_H
 

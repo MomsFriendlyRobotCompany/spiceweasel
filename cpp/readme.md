@@ -8,6 +8,8 @@
 
 **under development**
 
+This utilizes eigen library for matrix / vector operations.
+
 # MIT License
 
 **Copyright (c) 2022 Mom's Friendly Robot Company**
