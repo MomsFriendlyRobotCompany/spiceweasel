@@ -1,6 +1,11 @@
 ![](https://github.com/MomsFriendlyRobotCompany/spiceweasel/raw/main/pics/elzar.png)
 
 ![GitHub](https://img.shields.io/github/license/MomsFriendlyRobotCompany/spiceweasel)
+[![Latest Version](https://img.shields.io/pypi/v/spiceweasel.svg)](https://pypi.python.org/pypi/spiceweasel/)
+[![image](https://img.shields.io/pypi/pyversions/spiceweasel.svg)](https://pypi.python.org/pypi/spiceweasel)
+[![image](https://img.shields.io/pypi/format/spiceweasel.svg)](https://pypi.python.org/pypi/spiceweasel)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/spiceweasel?color=aqua)
+
 
 # Spice Weasel
 
