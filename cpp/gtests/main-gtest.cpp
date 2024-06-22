@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <spiceweasel.hpp>
-#include <vector>
+// #include <vector>
 
 using namespace std;
 
-TEST(navigation, wgs84) { EXPECT_TRUE(true); }
+TEST(spiceweasel, kf) { EXPECT_TRUE(true); }

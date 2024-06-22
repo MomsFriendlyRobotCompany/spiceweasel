@@ -1,12 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
 PROJECT(spiceweasel VERSION "2023.07.16")
 
-include(FetchContent)
-
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-
 
 if(PROJECT_IS_TOP_LEVEL)
     cmake_host_system_information(RESULT HOST QUERY HOSTNAME)
@@ -25,15 +22,6 @@ if(PROJECT_IS_TOP_LEVEL)
 
     set(BUILD_EXAMPLES ON)
     set(BUILD_GTESTS ON)
-
-    # GTest -----------------
-    FetchContent_Declare(
-        gtest
-        URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
-    )
-    list(APPEND libs gtest)
-    FetchContent_MakeAvailable( ${libs} )
-
 else()
     message(STATUS "-> ${PROJECT_NAME} is submodule")
     set(BUILD_EXAMPLES OFF)
